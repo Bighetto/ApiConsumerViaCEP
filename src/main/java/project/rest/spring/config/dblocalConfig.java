@@ -18,7 +18,8 @@ import java.util.HashMap;
 @Configuration
 @PropertySource({"classpath:application.properties"})
 @EnableJpaRepositories(entityManagerFactoryRef = "dblocalEntityManagerFactory",
-        basePackages = {"projectspring.estudo.repository.User"}, transactionManagerRef = "dblocalTransactionManager")
+        basePackages = {"project.rest.spring.repository.Usuario"},
+        transactionManagerRef = "dblocalTransactionManager")
 
 public class dblocalConfig {
 
@@ -48,7 +49,7 @@ public class dblocalConfig {
     public LocalContainerEntityManagerFactoryBean dblocalEntityManagerFactory() {
         System.out.println("loading config dblocal");
         final LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
-        em.setPackagesToScan("projectspring.estudo.model.Usuario");
+        em.setPackagesToScan("project.rest.spring.model.User");
         em.setPersistenceUnitName("Usuario");
         em.setDataSource(dblocalDataSource());
 

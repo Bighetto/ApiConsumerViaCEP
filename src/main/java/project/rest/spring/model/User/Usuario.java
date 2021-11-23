@@ -1,16 +1,28 @@
-package project.rest.spring.model;
+package project.rest.spring.model.User;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import javax.persistence.*;
 
 @Entity
 @Table(name = "Usuario")
-public class ViaCep {
+public class Usuario {
 
     @Id
-    @Column(name = "cep")
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(name = "nome")
+    private String name;
+
+    @Column(name = "cpf")
+    private String cpf;
+
+    @Column(name = "email")
+    private String email;
+
+    @Column(name = "CEP")
     private Integer cep;
 
     @Column(name = "logradouro")
@@ -28,16 +40,54 @@ public class ViaCep {
     @Column(name = "uf")
     private String uf;
 
-    public ViaCep(){
+    public Usuario(){
     }
 
-    public ViaCep(Integer cep, String logradouro, String complemento, String bairro, String localidade, String uf) {
+    public Usuario(Long id, String name, String cpf, String email,
+                   Integer cep, String logradouro, String complemento,
+                   String bairro, String localidade, String uf) {
+        this.id = id;
+        this.name = name;
+        this.cpf = cpf;
+        this.email = email;
         this.cep = cep;
         this.logradouro = logradouro;
         this.complemento = complemento;
         this.bairro = bairro;
         this.localidade = localidade;
         this.uf = uf;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public Integer getCep() {
@@ -90,8 +140,12 @@ public class ViaCep {
 
     @Override
     public String toString() {
-        return "ViaCep{" +
-                "cep=" + cep +
+        return "Usuario{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", cpf='" + cpf + '\'' +
+                ", email='" + email + '\'' +
+                ", cep=" + cep +
                 ", logradouro='" + logradouro + '\'' +
                 ", complemento='" + complemento + '\'' +
                 ", bairro='" + bairro + '\'' +
