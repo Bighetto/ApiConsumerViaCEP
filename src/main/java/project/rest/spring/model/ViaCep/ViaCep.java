@@ -12,7 +12,7 @@ import javax.persistence.Table;
 public class ViaCep{
 
     @JsonProperty
-    private Integer cep;
+    private String cep;
 
     @JsonProperty
     private String logradouro;
@@ -32,7 +32,7 @@ public class ViaCep{
     public ViaCep(){
     }
 
-    public ViaCep(Integer cep, String logradouro, String complemento, String bairro, String localidade, String uf) {
+    public ViaCep(String cep, String logradouro, String complemento, String bairro, String localidade, String uf) {
         this.cep = cep;
         this.logradouro = logradouro;
         this.complemento = complemento;
@@ -41,11 +41,11 @@ public class ViaCep{
         this.uf = uf;
     }
 
-    public Integer getCep() {
+    public String getCep() {
         return cep;
     }
 
-    public void setCep(Integer cep) {
+    public void setCep(String cep) {
         this.cep = cep;
     }
 

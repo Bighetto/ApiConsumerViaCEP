@@ -1,0 +1,38 @@
+ENDPOINTS APLICAÇÃO REST:
+
+GET:
+http://localhost:8080/usuarios/list
+
+
+VIACEP:
+https://viacep.com.br/ws/13203770/json/
+
+
+INSERT:
+http://localhost:8080/usuarios/insert
+
+body: 
+{
+    "name":"exemplo",
+    "cpf": "exemplo",
+    "email": "exemplo@gmail.com"
+}
+
+
+PUT: (update)
+http://localhost:8080/usuarios/update/{cpf}
+body:
+{
+    "name":"exemplo",
+    "email": "exemplo@gmail.com"
+}
+
+
+DELETE:
+http://localhost:8080/usuarios/delete/{cpf}
+
+
+POST com Adress: (atualizar campos de endereço do usuario pelo cpf cadastrado)
+http://localhost:8080/usuarios/updateAddress/{cep}/cpf/{cpf}
+
+

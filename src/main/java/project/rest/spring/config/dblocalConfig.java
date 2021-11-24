@@ -20,7 +20,6 @@ import java.util.HashMap;
 @EnableJpaRepositories(entityManagerFactoryRef = "dblocalEntityManagerFactory",
         basePackages = {"project.rest.spring.repository.Usuario"},
         transactionManagerRef = "dblocalTransactionManager")
-
 public class dblocalConfig {
 
 
@@ -67,4 +66,5 @@ public class dblocalConfig {
         final JpaTransactionManager transactionManager = new JpaTransactionManager();
         transactionManager.setEntityManagerFactory(dblocalEntityManagerFactory().getObject());
         return transactionManager;
-    }}
+    }
+}

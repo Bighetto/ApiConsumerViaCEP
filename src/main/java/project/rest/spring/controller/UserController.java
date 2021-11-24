@@ -22,7 +22,7 @@ public class UserController {
         return ResponseEntity.ok(service.listAll());
     }
 
-    @GetMapping(path = "/{name}")
+    @GetMapping(path = "/name/{name}")
     public ResponseEntity<Usuario> findByName(@PathVariable ("name") String name) {
         return ResponseEntity.ok(service.findByName(name));
     }
@@ -33,5 +33,30 @@ public class UserController {
         return service.save(usuario);
     }
 
+    @GetMapping(path = "/cpf/{cpf}")
+    public ResponseEntity<Usuario> findByCpf(@PathVariable("cpf") String cpf){
+        return ResponseEntity.ok(service.findByCpf(cpf));
+    }
 
+    @PutMapping(path = "/update/{cpf}")
+    public ResponseEntity<Object> update(@RequestBody Usuario usuario, @PathVariable("cpf")String cpf){
+        return service.update(usuario, cpf);
+    }
+
+    @DeleteMapping(path = "/delete/{cpf}")
+    public String delete(@PathVariable("cpf")String cpf){
+        service.delete(cpf);
+        return "Usuario Deletado com Sucesso !!! ";
+    }
+
+    @PostMapping
+    @RequestMapping(path = "/updateAddress/{cep}/cpf/{cpf}")
+    public String updateAddress(@PathVariable("cep")String cep, @PathVariable("cpf")String cpf){
+
+        Usuario user = service.findByCpf(cpf);
+
+        service.teste(cep,cpf);
+
+        return "Atualizado com Sucesso!!!";
+    }
 }

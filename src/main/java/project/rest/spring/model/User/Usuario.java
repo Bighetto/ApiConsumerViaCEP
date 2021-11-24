@@ -23,7 +23,7 @@ public class Usuario {
     private String email;
 
     @Column(name = "CEP")
-    private Integer cep;
+    private String cep;
 
     @Column(name = "logradouro")
     private String logradouro;
@@ -44,7 +44,7 @@ public class Usuario {
     }
 
     public Usuario(Long id, String name, String cpf, String email,
-                   Integer cep, String logradouro, String complemento,
+                   String cep, String logradouro, String complemento,
                    String bairro, String localidade, String uf) {
         this.id = id;
         this.name = name;
@@ -90,11 +90,11 @@ public class Usuario {
         this.email = email;
     }
 
-    public Integer getCep() {
+    public String getCep() {
         return cep;
     }
 
-    public void setCep(Integer cep) {
+    public void setCep(String cep) {
         this.cep = cep;
     }
 
