@@ -25,7 +25,6 @@ public class UserService {
     }
 
     public List<Usuario> listAll() {
-        System.out.println("Service");
         return usuarioRepository.findAll();
     }
 

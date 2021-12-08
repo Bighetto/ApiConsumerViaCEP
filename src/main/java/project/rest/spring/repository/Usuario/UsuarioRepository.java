@@ -42,5 +42,4 @@ public interface UsuarioRepository extends JpaRepository<Usuario, String> {
                        @Param("localidade")String localidade,
                        @Param("uf")String uf,
                        @Param("cpf")String cpf);
-
 }

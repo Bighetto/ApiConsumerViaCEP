@@ -1,5 +1,6 @@
 package project.rest.spring.controller;
 
+import org.springframework.data.repository.query.Param;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import project.rest.spring.model.User.Usuario;
@@ -23,7 +24,7 @@ public class UserController {
     }
 
     @GetMapping(path = "/name/{name}")
-    public ResponseEntity<Usuario> findByName(@PathVariable ("name") String name) {
+    public ResponseEntity<Usuario> findByName(@PathVariable("name") String name) {
         return ResponseEntity.ok(service.findByName(name));
     }
 
