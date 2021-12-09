@@ -12,10 +12,10 @@ COPY target/*.jar app.jar
 #VARIAVEIS DE AMBIENTE:
 
 #ENV URL \
- #   SENHA \
-  #  USUARIO \
+   # SENHA \
+   # USUARIO \
    # OPERACAO_PEDIDO \
-    #OPERACAO_TOKEN \
+   # OPERACAO_TOKEN \
    # STOREID \
    # DB_URL \
    # DB_NAME \
