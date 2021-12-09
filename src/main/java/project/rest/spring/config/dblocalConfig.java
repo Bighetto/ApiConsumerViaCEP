@@ -23,7 +23,7 @@ import java.util.HashMap;
 public class dblocalConfig {
 
 
-    @Value("jdbc:mysql://localhost:3306/dblocal")
+    @Value("jdbc:mysql://localhost:3308/dblocal2")
     private String url;
 
     @Value("root")
